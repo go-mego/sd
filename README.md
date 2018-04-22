@@ -61,8 +61,8 @@ func main() {
 	c.Register(&api.AgentServiceRegistration{
 		// 透過 `.ID()` 替這個服務產生一個獨立的 UUID 識別編號。
 		ID: c.ID(),
-        // 將服務的版本號帶入標籤中，所以我們就能在負載平衡透過標籤篩選服務的版本。
-        // 請參閱 Version 套件，這會產生一個 `1.0.0+stable` 的字串。
+		// 將服務的版本號帶入標籤中，所以我們就能在負載平衡透過標籤篩選服務的版本。
+		// 請參閱 Version 套件，這會產生一個 `1.0.0+stable` 的字串。
 		Tags: []string{version.Define(1, 0, 0, "stable").String()},
 		Name: "Database",
 		Port: 1234,
@@ -76,11 +76,11 @@ func main() {
 
 ```go
 func main() {
-    c, _ := consul.NewClient(api.DefaultConfig())
+	c, _ := consul.NewClient(api.DefaultConfig())
 	// 將指定編號的服務從服務探索中心裡移除。
 	c.Deregister(&api.AgentServiceRegistration{
-        // 如果先前有透過 `.Register()` 與 `.ID()` 註冊，
-        // 那麼這次就可以透過 `.ID()` 取得上次產生的編號進而從列表中移除自己。
+		// 如果先前有透過 `.Register()` 與 `.ID()` 註冊，
+		// 那麼這次就可以透過 `.ID()` 取得上次產生的編號進而從列表中移除自己。
 		ID: c.ID(),
 	})
 }
