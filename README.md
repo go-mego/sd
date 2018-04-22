@@ -1,6 +1,6 @@
 # Service Discovery [![GoDoc](https://godoc.org/github.com/go-mego/sd?status.svg)](https://godoc.org/github.com/go-mego/sd)
 
-Service Discovery 套件能夠讓你透過服務探索自動註冊服務，並且以負載平衡的方式來平均連線請求。
+Service Discovery 套件能夠讓你的服務與服務探索中心有所連動。
 
 # 索引
 
