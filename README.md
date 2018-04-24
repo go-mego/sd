@@ -40,7 +40,6 @@ package main
 
 import (
 	"github.com/go-mego/sd/consul"
-	"github.com/go-mego/sd/version"
 	"github.com/hashicorp/consul/api"
 )
 
